@@ -1,0 +1,5 @@
+Created by KityStudio as part of the MiniGames Project
+WordleCMD and MiniGames uses runJava 2.0 and myLib 0.2 also made by KityStudio to work
+Programmed in Java
+
+Hope you like this game! - KityStudio

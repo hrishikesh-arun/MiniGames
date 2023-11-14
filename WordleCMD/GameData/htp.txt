@@ -1,0 +1,7 @@
+How to Play
+The objective of the game is to guess the 5 letter word correctly.
+If you get a letter that is in the word and in the correct position, It is signified by a # symbol.
+If you get a letter that is in the word but not in its correct position, then it will be signified by a *
+If you get a letter that is not in the word, then it will be signified by a X
+You have only 6 guesses, after which the word will be revealed.
+Hope you will find the game interesting. Enjoy!

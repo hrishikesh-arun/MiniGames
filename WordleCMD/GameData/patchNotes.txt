@@ -1,0 +1,6 @@
+Patch Notes
+
+1: New Patch Notes Page
+2: Uses the new FileMethods module for reading data
+
+WordleCMD v0.0.0a1 Coming Soon
