@@ -3,7 +3,7 @@ import myLib.FileMethods;
 class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.0.0p10";
+	public static String wordleVersion="v0.0.0";
 	WordleGame()
 	{
 		System.out.println("Wordle CMD "+wordleVersion);
@@ -60,7 +60,64 @@ class WordleGame
 	// Main Game
 	void playGame()
 	{
-		System.out.println("\nPlay Mode Coming soon!");
+		System.out.println("\nGuess the 5 letter Word\n");
+		boolean hasEnded = false;
+		int count=1;
+		String sWord = getRandomWord();
+		char[] sWordArr = sWord.toCharArray();
+		String ip;
+		do
+		{
+			char[] result = new char[5];
+			//Take Input
+			ip=InputField.enterField_str("\n"+count+": ",false).toUpperCase();
+			char[] ipA = ip.toCharArray();
+			//Check if letter is correct
+			int checkCount = 0;
+			for(char i:ipA)
+			{
+				if (i == sWordArr[checkCount])
+					result[checkCount] = '#';
+				else
+					result[checkCount] = ' ';
+				checkCount++;
+			}
+			// check if letter is there in word
+			int checkCountI = 0;
+			for(char i:ipA)
+			{
+				int checkCountJ = 0;
+				for(char j:sWordArr)
+				{
+					if (i == j)
+					{
+						if(result[checkCountI]!= '#')
+							result[checkCountI] = '*';
+					}
+					checkCountJ++;
+				}
+				checkCountI++;
+			}
+			
+			int countR = 0;
+			for(char x: result)
+			{
+				if(x==' ')
+					result[countR] = 'X';
+				countR++;
+			}
+			//Show Output
+			System.out.println("\n"+ip.toUpperCase());
+			System.out.println(result);
+			//Continue
+			count++;
+			hasEnded= count>6;
+		}while(!hasEnded);
+	}
+	// Gets Random 5 letter word
+	String getRandomWord()
+	{
+		return "HELLO";
 	}
 	
 	public static void main(String arg[])
