@@ -8,15 +8,18 @@
  
 > __Note__: Currently the main MiniGames.java doesn't exist. I hope to make it soon.
 
-## WordleCMD - Update v0.0.0
+## WordleCMD - Update v0.0.1
 ### Planned Features
 - Optimized Code
-- Game Loop Beginnings
-- And more on the way..
+- Game Loop Continuation
+- And more on the way...
 
 ## WordleCMD - Version History
+### WordleCMD v0.0.0
+- New Basic Game Loop
+- Optimizations will be included in v0.0.1
 ### WordleCMD v0.0.0p10
 - New Patch Notes Page
 - Uses the new FileMethods module for reading data
 ### WordleCMD v0.0.0p9
- - Uploaded to Github
+ - Uploaded to GitHub
