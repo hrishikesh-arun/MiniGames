@@ -1,8 +1,7 @@
 Patch Notes
 
-1: Jumped directly to v0.1.0 because more than 60% of game loop is complete
-2: Shows Victory and game over if the players wins or loses the game
-3: Optimized Code
+1: Optimized Code
+2: Using String.contains() insted of the old for loop.
 
 Known Issues
 

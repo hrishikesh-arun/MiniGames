@@ -3,7 +3,7 @@ import myLib.FileMethods;
 class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.1.0";
+	public static String wordleVersion="v0.1.1";
 	WordleGame()
 	{
 		System.out.println("Wordle CMD "+wordleVersion);
@@ -62,14 +62,13 @@ class WordleGame
 	{
 		System.out.println("\nGuess the 5 letter Word\n");
 		boolean hasEnded = false,hasWon = false;
-		int count=1,correctLetters=0;
+		int count=1,correctLetters;
 		String sWord = getRandomWord();
-		char[] sWordArr = sWord.toCharArray();
 		String ip;
 		do
 		{
 			correctLetters=0;
-			char[] result = {' ',' ',' ',' ',' '};
+			char[] result = new char[5];
 			//Take Input
 			ip=InputField.enterField_str("\n"+count+": ",false).toUpperCase();
 			//Check if word has 5 letters
@@ -78,35 +77,23 @@ class WordleGame
 				System.out.println("Error! Game Accepts only 5 letter words! Try Again!");
 				continue;
 			}
-			char[] ipA = ip.toCharArray();
 			//Check if letter is correct
-			int checkCountI =0,checkCountJ;
-			for(char i:ipA)
+			for(int checkCount=0; checkCount < ip.length();checkCount++)
 			{
-				checkCountJ = 0;
-				for(char j:sWordArr)
+				char i = ip.charAt(checkCount);
+				if (i == sWord.charAt(checkCount))
 				{
-					if (i == j)
-					{
-						if (checkCountI == checkCountJ)
-						{
-							result[checkCountI] = '#';
-							correctLetters++;
-						}
-						else if (checkCountI != checkCountJ && result[checkCountI] != '#')
-							result[checkCountI] = '*';
-					}
-					checkCountJ++;
+					result[checkCount] = '#';
+					correctLetters++;
 				}
-				checkCountI++;
-			}
-			//Check if letter is not there in word
-			int countR = 0;
-			for(char x: result)
-			{
-				if(x==' ')
-					result[countR] = 'X';
-				countR++;
+				else if (sWord.contains(Character.toString(i)))
+				{
+					result[checkCount] = '*';
+				}
+				else
+				{
+					result[checkCount] = 'X';
+				}
 			}
 			//Show Output
 			System.out.println("\n"+ip.toUpperCase());

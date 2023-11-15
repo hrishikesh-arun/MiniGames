@@ -9,12 +9,17 @@
 > __Note__: Currently the main MiniGames.java doesn't exist. I hope to make it soon.
 
 ## WordleCMD - Update v0.2.0
+
 ### Planned Features
 - Game Loop Continuation
+- Random Word Generator
 - And more on the way...
 
 ## WordleCMD - Version History
 
+### WordleCMD v0.1.1 Hotfix
+- Optimized Code
+- Using String.contains() insted of the old for loop.
 ### WordleCMD v0.1.0
 - Jumped directly to v0.1.0 because more than 60% of game loop is complete
 - Shows Victory and game over if the players wins or loses the game
