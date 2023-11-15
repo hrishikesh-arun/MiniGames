@@ -8,13 +8,17 @@
  
 > __Note__: Currently the main MiniGames.java doesn't exist. I hope to make it soon.
 
-## WordleCMD - Update v0.0.1
+## WordleCMD - Update v0.2.0
 ### Planned Features
-- Optimized Code
 - Game Loop Continuation
 - And more on the way...
 
 ## WordleCMD - Version History
+
+### WordleCMD v0.1.0
+- Jumped directly to v0.1.0 because more than 60% of game loop is complete
+- Shows Victory and game over if the players wins or loses the game
+- Optimized Code
 ### WordleCMD v0.0.0
 - New Basic Game Loop
 - Optimizations will be included in v0.0.1

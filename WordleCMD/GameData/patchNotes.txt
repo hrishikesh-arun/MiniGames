@@ -1,4 +1,17 @@
 Patch Notes
 
-1: New Basic Game Loop
-2: Optimizations will be included in v0.0.1
+1: Jumped directly to v0.1.0 because more than 60% of game loop is complete
+2: Shows Victory and game over if the players wins or loses the game
+3: Optimized Code
+
+Known Issues
+
+1: 
+Mystery Word:
+HELLO
+Typed word:
+LILLY
+Output:
+*X##X
+
+It is showing that the first L is in the wrong place, but we have only 2 L's

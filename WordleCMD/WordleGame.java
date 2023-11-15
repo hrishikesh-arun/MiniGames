@@ -3,7 +3,7 @@ import myLib.FileMethods;
 class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.0.0";
+	public static String wordleVersion="v0.1.0";
 	WordleGame()
 	{
 		System.out.println("Wordle CMD "+wordleVersion);
@@ -61,44 +61,46 @@ class WordleGame
 	void playGame()
 	{
 		System.out.println("\nGuess the 5 letter Word\n");
-		boolean hasEnded = false;
-		int count=1;
+		boolean hasEnded = false,hasWon = false;
+		int count=1,correctLetters=0;
 		String sWord = getRandomWord();
 		char[] sWordArr = sWord.toCharArray();
 		String ip;
 		do
 		{
-			char[] result = new char[5];
+			correctLetters=0;
+			char[] result = {' ',' ',' ',' ',' '};
 			//Take Input
 			ip=InputField.enterField_str("\n"+count+": ",false).toUpperCase();
+			//Check if word has 5 letters
+			if(ip.length()!=5)
+			{
+				System.out.println("Error! Game Accepts only 5 letter words! Try Again!");
+				continue;
+			}
 			char[] ipA = ip.toCharArray();
 			//Check if letter is correct
-			int checkCount = 0;
+			int checkCountI =0,checkCountJ;
 			for(char i:ipA)
 			{
-				if (i == sWordArr[checkCount])
-					result[checkCount] = '#';
-				else
-					result[checkCount] = ' ';
-				checkCount++;
-			}
-			// check if letter is there in word
-			int checkCountI = 0;
-			for(char i:ipA)
-			{
-				int checkCountJ = 0;
+				checkCountJ = 0;
 				for(char j:sWordArr)
 				{
 					if (i == j)
 					{
-						if(result[checkCountI]!= '#')
+						if (checkCountI == checkCountJ)
+						{
+							result[checkCountI] = '#';
+							correctLetters++;
+						}
+						else if (checkCountI != checkCountJ && result[checkCountI] != '#')
 							result[checkCountI] = '*';
 					}
 					checkCountJ++;
 				}
 				checkCountI++;
 			}
-			
+			//Check if letter is not there in word
 			int countR = 0;
 			for(char x: result)
 			{
@@ -111,9 +113,24 @@ class WordleGame
 			System.out.println(result);
 			//Continue
 			count++;
+			if(correctLetters==5)
+			{
+				hasEnded = true;
+				hasWon = true;
+				break;
+			}
 			hasEnded= count>6;
 		}while(!hasEnded);
+		if(hasWon)
+		{
+			System.out.println("\nVictory! Congratulations!");
+		}
+		else
+		{
+			System.out.println("\nGame Over! Better luck next time!");
+		}
 	}
+	
 	// Gets Random 5 letter word
 	String getRandomWord()
 	{
