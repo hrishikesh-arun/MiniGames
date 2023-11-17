@@ -1,11 +1,19 @@
 import myLib.InputField;
 import myLib.FileMethods;
+import java.util.Random;
+
 class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.2.0";
+	public static String wordleVersion="v0.3.0b1";
+	String[] dictionary;
+	Random r;
 	WordleGame()
 	{
+		// Load Dict
+		dictionary = loadDictionary();
+		r = new Random();
+		// Start
 		System.out.println("Wordle CMD "+wordleVersion);
 		System.out.println("\nWelcome to Wordle CMD!");
 		String op;
@@ -63,7 +71,7 @@ class WordleGame
 		System.out.println("\nGuess the 5 letter Word\n");
 		boolean hasEnded = false,hasWon = false;
 		int count=1,correctLetters;
-		String sWord = getRandomWord();
+		String sWord = getRandomWord().toUpperCase();
 		String ip;
 		do
 		{
@@ -99,7 +107,7 @@ class WordleGame
 		}
 		else
 		{
-			System.out.println("\nGame Over! Better luck next time!");
+			System.out.println("\nGame Over! The word is "+sWord+"\n\nBetter luck next time!");
 		}
 	}
 	
@@ -154,8 +162,17 @@ class WordleGame
 	}
 	// Gets Random 5 letter word
 	String getRandomWord()
+	{		
+		int randomNumber = r.nextInt(dictionary.length);
+        String word = dictionary[randomNumber];
+        
+		return word;
+	}
+	String[] loadDictionary()
 	{
-		return "HELLO";
+		String[] dic = new String[5757];
+		dic = FileMethods.readFile_LineByLine(".\\WordleCMD\\GameData\\dictionary.txt",5757);
+		return dic;
 	}
 	
 	public static void main(String arg[])

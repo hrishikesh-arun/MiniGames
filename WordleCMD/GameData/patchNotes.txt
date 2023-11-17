@@ -1,8 +1,9 @@
 Patch Notes
 
 \    /      / |\/| |\
- \/\/ ordle \ |  | |/ v0.2.0 "The Word Buggy"
+ \/\/ ordle \ |  | |/ v0.3.0b1
 
-1: Fixed the multiple letter problem
-2: Created runWordle.bat for running WordleGame
-3: 90% Game Loop Complete
+1: Added Dictionary.txt for random word generator
+2: Reveals word if player didn't guess the answer
+
+TBD 3: Scoring (Just a Miss, Good , Great,Excellent,Brilliant,Outstanding etc) (v0.3.0)

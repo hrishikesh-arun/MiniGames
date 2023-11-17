@@ -1,5 +1,5 @@
 /*
-myLib.InputField v0.0.1
+myLib.InputField v0.1.0
 */
 package myLib;
 import java.util.Scanner;

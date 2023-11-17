@@ -1,5 +1,5 @@
 /*
-myLib.FileMethods v0.0.1
+myLib.FileMethods v0.0.2
 */
 package myLib;
 import java.io.File;
@@ -36,6 +36,30 @@ public class FileMethods
 			{
 				data=sc.nextLine();
 				textData+=data+"\n";
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("An unexpected error occurred");
+			e.printStackTrace();
+		}
+		return textData;
+	}
+	public static String[] readFile_LineByLine(String location,int len)
+	{
+		// Read File
+		File f = new File(location);
+		String[] textData = new String[len];
+		int count=0;
+		try
+		{
+			Scanner sc = new Scanner(f);
+			String data = "";
+			while(sc.hasNextLine())
+			{
+				data=sc.nextLine();
+				textData[count] = data;
+				count++;
 			}
 		}
 		catch(Exception e)

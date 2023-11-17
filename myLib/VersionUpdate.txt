@@ -1,4 +1,4 @@
-myLib v0.0.2
+myLib v0.3.0
 |
-|-InputField.java v0.0.1
-|-FileMethods.java v0.0.1
+|-InputField.java v0.1.0
+|-FileMethods.java v0.0.2

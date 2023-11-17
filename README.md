@@ -19,12 +19,16 @@
 - **v0.1.0** : 60% Game Loop (#)<br>
 - **v0.1.1** : Hotfix (#)<br>
 - **v0.2.0 - "The Word Buggy"** : 90% Game Loop (#) **[NEW!]**<br>
+- **v0.3.0b1** : Add Word Dictionary<br>
 - _**v0.3.0**_ : Complete Game Loop<br>
 - _**v0.4.0**_ : MiniGames Major Update (Coming soon!)<br>
 - _**v1.0.0**_  : Final Game<br>
 
 ## WordleCMD - Version History
 
+### WordleCMD v0.3.0b1
+- Added Dictionary.txt for random word generator
+- Reveals word if player didn't guess the answer
 ### WordleCMD v0.2.0 "The Word Buggy" Update
 - Fixed the multiple letter problem
 - Created runWordle.bat for running WordleGame

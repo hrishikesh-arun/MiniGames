@@ -1,5 +1,6 @@
 Created by KityStudio as part of the MiniGames Project
-WordleCMD and MiniGames uses runJava 2.0 and myLib 0.2 also made by KityStudio to run
+WordleCMD and MiniGames uses runJava 2.0 and myLib 0.3 also made by KityStudio to run
 Programmed in Java
+Dictionary Words taken from https://www-cs-faculty.stanford.edu/~knuth/sgb-words.txt
 
 Hope you like this game! - KityStudio
