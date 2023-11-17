@@ -1,16 +1,8 @@
 Patch Notes
 
-1: Optimized Code
-2: Using String.contains() insted of the old for loop.
+\    /      / |\/| |\
+ \/\/ ordle \ |  | |/ v0.2.0 "The Word Buggy"
 
-Known Issues
-
-1: 
-Mystery Word:
-HELLO
-Typed word:
-LILLY
-Output:
-*X##X
-
-It is showing that the first L is in the wrong place, but we have only 2 L's
+1: Fixed the multiple letter problem
+2: Created runWordle.bat for running WordleGame
+3: 90% Game Loop Complete

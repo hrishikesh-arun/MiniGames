@@ -3,7 +3,7 @@ import myLib.FileMethods;
 class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.1.1";
+	public static String wordleVersion="v0.2.0";
 	WordleGame()
 	{
 		System.out.println("Wordle CMD "+wordleVersion);
@@ -78,26 +78,11 @@ class WordleGame
 				continue;
 			}
 			//Check if letter is correct
-			for(int checkCount=0; checkCount < ip.length();checkCount++)
-			{
-				char i = ip.charAt(checkCount);
-				if (i == sWord.charAt(checkCount))
-				{
-					result[checkCount] = '#';
-					correctLetters++;
-				}
-				else if (sWord.contains(Character.toString(i)))
-				{
-					result[checkCount] = '*';
-				}
-				else
-				{
-					result[checkCount] = 'X';
-				}
-			}
+			result=checkInput(ip,sWord);
 			//Show Output
 			System.out.println("\n"+ip.toUpperCase());
 			System.out.println(result);
+			correctLetters=countCorrectLetters(result);
 			//Continue
 			count++;
 			if(correctLetters==5)
@@ -118,6 +103,55 @@ class WordleGame
 		}
 	}
 	
+	char[] checkInput(String ip, String sWord)
+	{
+		//Check if letter is correct
+		String tempWord = sWord;
+		char[] result = new char[5]; 
+		for(int checkCount=0; checkCount < ip.length();checkCount++)
+		{
+			char i = ip.charAt(checkCount);
+			if (i == sWord.charAt(checkCount))
+			{
+				result[checkCount] = '#';
+				tempWord = tempWord.substring(0, checkCount) + ' ' + tempWord.substring(checkCount+1);
+			}
+			else
+			{
+				result[checkCount] = 'X';
+			}
+		}
+		//Check if letter is in wrong place
+		for(int checkCount=0; checkCount < ip.length();checkCount++)
+		{
+			char i = ip.charAt(checkCount);
+			if (tempWord.contains(Character.toString(i)))
+			{
+				for (int index = 0; index < sWord.length(); index++)
+				{
+					if (tempWord.charAt(index) == i)
+					{
+						result[checkCount] = '*';
+					}
+					else if(result[index] != '#' && result[index] != '*')
+					{
+						result[index] = 'X';
+					}
+				}
+			}
+		}
+		return result;
+	}
+	
+	int countCorrectLetters(char[] r)
+	{
+		int cL=0;
+		for(char i:r)
+		{
+			cL+= i=='#' ? 1:0;
+		}
+		return cL;
+	}
 	// Gets Random 5 letter word
 	String getRandomWord()
 	{
