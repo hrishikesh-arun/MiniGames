@@ -1,0 +1,8 @@
+\    /      / |\/| |\
+ \/\/ ordle \ |  | |/ v0.4.0d1
+ 
+Patch Notes
+
+1: WordleCMD is has now officially been added to MiniGames
+2: Converted to a java module.
+3: Folder Relocation

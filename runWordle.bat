@@ -1,6 +1,6 @@
 @echo off
 
-javac .\WordleCMD\WordleGame.java
-java .\WordleCMD\WordleGame.java
+javac .\games\wordleCMD\WordleGame.java
+java .\games\wordleCMD\WordleGame.java
 
 :eof

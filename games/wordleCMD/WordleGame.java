@@ -1,14 +1,16 @@
+package games.wordleCMD;
+
 import myLib.InputField;
 import myLib.FileMethods;
 import java.util.Random;
 
-class WordleGame
+public class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.3.0";
+	public static String wordleVersion="v0.4.0d1";
 	String[] dictionary;
 	Random r;
-	WordleGame()
+	public WordleGame()
 	{
 		r = new Random();
 		// Start
@@ -60,22 +62,22 @@ class WordleGame
 	{
 		String text = "";
 		if(showInstructions)
-			text = FileMethods.readFile(".\\WordleCMD\\GameData\\instructions.txt");
+			text = FileMethods.readFile(".\\games\\wordleCMD\\GameData\\instructions.txt");
 			System.out.println("\n"+text);
 		if(showHowToPlay)
 		{
-			text = FileMethods.readFile(".\\WordleCMD\\GameData\\htp.txt");
+			text = FileMethods.readFile(".\\games\\wordleCMD\\GameData\\htp.txt");
 			System.out.println("\n"+text);
 		}
 	}
 	void viewCredits()
 	{
-		String credits = FileMethods.readFile(".\\WordleCMD\\GameData\\credits.txt");
+		String credits = FileMethods.readFile(".\\games\\wordleCMD\\GameData\\credits.txt");
 		System.out.println("\nCredits\n\n"+credits);
 	}
 	void viewPatchNotes()
 	{
-		String patchNotes = FileMethods.readFile(".\\WordleCMD\\GameData\\patchNotes.txt");
+		String patchNotes = FileMethods.readFile(".\\games\\wordleCMD\\GameData\\patchNotes.txt");
 		System.out.println("\n"+patchNotes);
 	}
 	// Main Game
@@ -210,13 +212,13 @@ class WordleGame
 		switch(level)
 		{
 			case 1:
-				dic = FileMethods.readFile_LineByLine(".\\WordleCMD\\GameData\\dictionaryEasy.txt",50);
+				dic = FileMethods.readFile_LineByLine(".\\games\\wordleCMD\\GameData\\dictionaryEasy.txt",50);
 				break;
 			case 2:
-				dic = FileMethods.readFile_LineByLine(".\\WordleCMD\\GameData\\dictionaryMedium.txt",750);
+				dic = FileMethods.readFile_LineByLine(".\\games\\wordleCMD\\GameData\\dictionaryMedium.txt",750);
 				break;
 			default:
-				dic = FileMethods.readFile_LineByLine(".\\WordleCMD\\GameData\\dictionaryHard.txt",5750);
+				dic = FileMethods.readFile_LineByLine(".\\games\\wordleCMD\\GameData\\dictionaryHard.txt",5750);
 				break;
 		}
 		return dic;

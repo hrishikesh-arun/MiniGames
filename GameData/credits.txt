@@ -1,0 +1,5 @@
+Created by KityStudio as part of the MiniGames Project
+MiniGames uses runJava 2.0 and myLib 0.3 also made by KityStudio to run
+Programmed in Java
+
+Hope you like the mini-games! - KityStudio
