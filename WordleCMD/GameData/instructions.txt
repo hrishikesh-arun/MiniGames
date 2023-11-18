@@ -1,0 +1,5 @@
+Instructions:
+Press 1e 1m or 1h to play (e means easy , m means medium , h means hard)
+Press i to view Instructions and How to Play
+Press e to view Patch notes and Credits
+Press 0 to quit

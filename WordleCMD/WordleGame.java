@@ -5,13 +5,11 @@ import java.util.Random;
 class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.3.0b1";
+	public static String wordleVersion="v0.3.0";
 	String[] dictionary;
 	Random r;
 	WordleGame()
 	{
-		// Load Dict
-		dictionary = loadDictionary();
 		r = new Random();
 		// Start
 		System.out.println("Wordle CMD "+wordleVersion);
@@ -27,8 +25,21 @@ class WordleGame
 				case "0":
 					hasQuit=true;
 					break;
+				case "1e":
+					System.out.println("\nDifficulty: Easy");
+					playGame(1);
+					break;
+				case "1m":
+					System.out.println("\nDifficulty: Medium");
+					playGame(2);
+					break;
+				case "1h":
+					System.out.println("\nDifficulty: Hard");
+					playGame(3);
+					break;
 				case "1":
-					playGame();
+					System.out.println("\nDifficulty: Hard");
+					playGame(3);
 					break;
 				case "i":
 					viewInstructions(true,true);
@@ -47,12 +58,14 @@ class WordleGame
 	}
 	void viewInstructions(boolean showInstructions,boolean showHowToPlay)
 	{
+		String text = "";
 		if(showInstructions)
-			System.out.println("\nInstructions:\nPress 1 to play\nPress i to view Instructions and How to Play\nPress e to view Patch notes and Credits\nPress 0 to quit");
+			text = FileMethods.readFile(".\\WordleCMD\\GameData\\instructions.txt");
+			System.out.println("\n"+text);
 		if(showHowToPlay)
 		{
-			String htp = FileMethods.readFile(".\\WordleCMD\\GameData\\htp.txt");
-			System.out.println("\n"+htp);
+			text = FileMethods.readFile(".\\WordleCMD\\GameData\\htp.txt");
+			System.out.println("\n"+text);
 		}
 	}
 	void viewCredits()
@@ -63,11 +76,13 @@ class WordleGame
 	void viewPatchNotes()
 	{
 		String patchNotes = FileMethods.readFile(".\\WordleCMD\\GameData\\patchNotes.txt");
-		System.out.println("\nWordle CMD "+wordleVersion+"\n"+patchNotes);
+		System.out.println("\n"+patchNotes);
 	}
 	// Main Game
-	void playGame()
+	void playGame(int lev)
 	{
+		// Load Dict
+		dictionary = loadDictionary(lev);
 		System.out.println("\nGuess the 5 letter Word\n");
 		boolean hasEnded = false,hasWon = false;
 		int count=1,correctLetters;
@@ -104,6 +119,27 @@ class WordleGame
 		if(hasWon)
 		{
 			System.out.println("\nVictory! Congratulations!");
+			switch(count)
+			{
+				case 1:
+					System.out.println("Extraordinary! Found in 1 guess");
+					break;
+				case 2:
+					System.out.println("Brilliant! Found in 2 guesses");
+					break;
+				case 3:
+					System.out.println("Great! Found in 3 guesses");
+					break;
+				case 4:
+					System.out.println("Good! Found in 4 guesses");
+					break;
+				case 5:
+					System.out.println("Fair! Found in 5 guesses");
+					break;
+				default:
+					System.out.println("Phew! Found in 6 guesses");
+					break;
+			}
 		}
 		else
 		{
@@ -168,10 +204,21 @@ class WordleGame
         
 		return word;
 	}
-	String[] loadDictionary()
+	String[] loadDictionary(int level)
 	{
-		String[] dic = new String[5757];
-		dic = FileMethods.readFile_LineByLine(".\\WordleCMD\\GameData\\dictionary.txt",5757);
+		String[] dic;
+		switch(level)
+		{
+			case 1:
+				dic = FileMethods.readFile_LineByLine(".\\WordleCMD\\GameData\\dictionaryEasy.txt",50);
+				break;
+			case 2:
+				dic = FileMethods.readFile_LineByLine(".\\WordleCMD\\GameData\\dictionaryMedium.txt",750);
+				break;
+			default:
+				dic = FileMethods.readFile_LineByLine(".\\WordleCMD\\GameData\\dictionaryHard.txt",5750);
+				break;
+		}
 		return dic;
 	}
 	

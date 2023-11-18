@@ -1,9 +1,8 @@
-Patch Notes
-
 \    /      / |\/| |\
- \/\/ ordle \ |  | |/ v0.3.0b1
+ \/\/ ordle \ |  | |/ v0.3.0 "The Wordinator!"
+ 
+Patch Notes
 
 1: Added Dictionary.txt for random word generator
 2: Reveals word if player didn't guess the answer
-
-TBD 3: Scoring (Just a Miss, Good , Great,Excellent,Brilliant,Outstanding etc) (v0.3.0)
+3: Scoring (Just a Miss, Good , Great,Excellent,Brilliant,Outstanding etc)
