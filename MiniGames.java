@@ -1,11 +1,14 @@
 import myLib.InputField;
 import myLib.FileMethods;
+
+// Import Games
 import games.wordleCMD.WordleGame;
+import games.nim.NimGame;
 
 class MiniGames
 {
 	boolean hasQuit=false;
-	public static String miniGamesVersion="v0.0.0d1";
+	public static String miniGamesVersion="v0.0.0d2";
 	MiniGames()
 	{
 		// Start
@@ -17,14 +20,20 @@ class MiniGames
 		{
 			
 			op=InputField.enterField_str("\nMiniGames> ",false);
+			System.out.println();
 			switch(op)
 			{
 				case "0":
 					hasQuit=true;
 					break;
 				case "1":
-					playWordleCMD();
+					WordleGame wg = new WordleGame();
 					break;
+				case "2":
+					NimGame ng = new NimGame();
+					break;
+				// Add your games here
+				
 				case "i":
 					viewInstructions();
 					break;
@@ -39,11 +48,6 @@ class MiniGames
 			
 		}while(!hasQuit);
 		System.out.println("\nThanks for playing MiniGames!");
-	}
-	void playWordleCMD()
-	{
-		System.out.println();
-		WordleGame wg = new WordleGame();
 	}
 	void viewInstructions()
 	{

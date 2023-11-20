@@ -1,0 +1,42 @@
+How to add a java game or app to MiniGames:
+
+Step 1: Make a directory inside games folder with your game name in camel case
+Example: Game Name: 'Word Exercise' Folder: .\games\wordExercise\
+Step 2: Copy your game's code to the folder.
+Step 3: Add the following line of code to your game's source code on the first line:
+package games.myGame;
+Example: games.wordExercise;
+
+Step 4: Compile your source code
+Step 5: Edit MiniGames.java in these parts
+
+// Import Games
+import games.wordleCMD.WordleGame;
+import games.nim.NimGame;
+// Import your game here; For Example
+import games.wordExercise.WordExercise;
+
+
+
+case "2":
+	NimGame ng = new NimGame();
+	break;
+
+// Add your games here For example:
+case "3":
+	WordExercise we = new WordExercise();
+	break;
+
+Step 6: Edit instructions.txt in MiniGames\GameData (Not your GameData folder, if you have)
+
+In the options section add like this
+Example:
+2: Nim
+3: Tix Tax Tox {Another game of yours}
+x: Word Exercise
+
+This will help the users to pick the game they want form the options.
+
+Step 7: run runMiniGames.java and check for any errors and rectify them.
+Step 8: Publish your MiniGames mod to Github as a pull request. (Allowed after v1.0)
+Enjoy!		

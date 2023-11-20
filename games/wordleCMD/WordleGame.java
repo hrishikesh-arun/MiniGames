@@ -7,7 +7,8 @@ import java.util.Random;
 public class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.4.0d1";
+	public static String wordleVersion="v0.4.0d2";
+	public String dir = ".\\games\\wordleCMD\\GameData\\";
 	String[] dictionary;
 	Random r;
 	public WordleGame()
@@ -62,22 +63,22 @@ public class WordleGame
 	{
 		String text = "";
 		if(showInstructions)
-			text = FileMethods.readFile(".\\games\\wordleCMD\\GameData\\instructions.txt");
+			text = FileMethods.readFile(dir+"instructions.txt");
 			System.out.println("\n"+text);
 		if(showHowToPlay)
 		{
-			text = FileMethods.readFile(".\\games\\wordleCMD\\GameData\\htp.txt");
+			text = FileMethods.readFile(dir+"htp.txt");
 			System.out.println("\n"+text);
 		}
 	}
 	void viewCredits()
 	{
-		String credits = FileMethods.readFile(".\\games\\wordleCMD\\GameData\\credits.txt");
+		String credits = FileMethods.readFile(dir+"credits.txt");
 		System.out.println("\nCredits\n\n"+credits);
 	}
 	void viewPatchNotes()
 	{
-		String patchNotes = FileMethods.readFile(".\\games\\wordleCMD\\GameData\\patchNotes.txt");
+		String patchNotes = FileMethods.readFile(dir+"patchNotes.txt");
 		System.out.println("\n"+patchNotes);
 	}
 	// Main Game

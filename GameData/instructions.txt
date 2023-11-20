@@ -1,6 +1,7 @@
 Options (Type the number to play):
 
 1: WordleCMD
+2: Nim
 
 More Coming soon!
 

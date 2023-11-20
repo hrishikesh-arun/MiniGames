@@ -10,11 +10,9 @@
 
 ### Roadmap (# Means Complete)
 
-- **v0.0.0d1**  : Introduction of MiniGames
+- **v0.0.0d1**  : Introduction of MiniGames (#)
+- **v0.0.0d2**  : Introduction of Nim Game (#)
 
 - More Updates Coming soon!
 
 - _**v1.0.0**_  : Final Game<br>
-
-## MiniGames - Version History
-**Available in Patch notes**
