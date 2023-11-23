@@ -1,3 +1,8 @@
 How to Play
 
-Coming Soon!
+Both players add to a shared total.
+The shared total starts at 0.
+On their turn, a player may add from 1 to 10 to the shared total.
+The first player to reach 100 wins!
+
+Enjoy!

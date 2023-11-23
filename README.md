@@ -4,7 +4,7 @@
  
  It is programmed in Java
 
- It utilises the package myLib for file and input control and runMiniGames.bat for the execution of code.
+ It utilises the package myLib for file and input control.
 
 ## MiniGames - Roadmap
 
@@ -12,6 +12,7 @@
 
 - **v0.0.0d1**  : Introduction of MiniGames (#)
 - **v0.0.0d2**  : Introduction of Nim Game (#)
+- **v0.1.0**  : Program Consolidation (#)
 
 - More Updates Coming soon!
 

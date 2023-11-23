@@ -7,7 +7,7 @@ import java.util.Random;
 public class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.4.0d2";
+	public static String wordleVersion="v0.4.0";
 	public String dir = ".\\games\\wordleCMD\\GameData\\";
 	String[] dictionary;
 	Random r;
@@ -57,7 +57,6 @@ public class WordleGame
 			}
 			
 		}while(!hasQuit);
-		System.out.println("\nThanks for playing Wordle CMD!");
 	}
 	void viewInstructions(boolean showInstructions,boolean showHowToPlay)
 	{
@@ -94,7 +93,7 @@ public class WordleGame
 		do
 		{
 			correctLetters=0;
-			char[] result = new char[5];
+			char[] result;
 			//Take Input
 			ip=InputField.enterField_str("\n"+count+": ",false).toUpperCase();
 			//Check if word has 5 letters
@@ -105,10 +104,9 @@ public class WordleGame
 			}
 			//Check if letter is correct
 			result=checkInput(ip,sWord);
-			//Show Output
-			System.out.println("\n"+ip.toUpperCase());
-			System.out.println(result);
 			correctLetters=countCorrectLetters(result);
+			//Show Output
+			System.out.println("\n"+result+"\n");
 			//Continue
 			count++;
 			if(correctLetters==5)
@@ -154,7 +152,7 @@ public class WordleGame
 	{
 		//Check if letter is correct
 		String tempWord = sWord;
-		char[] result = new char[5]; 
+		char[] result = new char[5];
 		for(int checkCount=0; checkCount < ip.length();checkCount++)
 		{
 			char i = ip.charAt(checkCount);
@@ -187,6 +185,7 @@ public class WordleGame
 				}
 			}
 		}
+		
 		return result;
 	}
 	
@@ -201,7 +200,7 @@ public class WordleGame
 	}
 	// Gets Random 5 letter word
 	String getRandomWord()
-	{		
+	{
 		int randomNumber = r.nextInt(dictionary.length);
         String word = dictionary[randomNumber];
         

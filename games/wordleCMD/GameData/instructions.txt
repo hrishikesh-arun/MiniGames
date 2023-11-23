@@ -1,5 +1,10 @@
 Instructions:
-Press 1e 1m or 1h to play (e means easy , m means medium , h means hard)
+
+Press 1 to play (1 alone starts hard mode,so specify if you want easy mode)
+1e - Easy Mode
+1m - Medium Mode
+1h - Hard Mode
+
 Press i to view Instructions and How to Play
 Press e to view Patch notes and Credits
 Press 0 to quit

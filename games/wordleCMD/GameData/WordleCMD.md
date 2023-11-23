@@ -21,11 +21,14 @@
 - **v0.3.0b1** : Add Word Dictionary<br>
 - **v0.3.0 - "The Wordinator!"** : Game Loop Complete!<br>
 - **v0.4.0d1** : WordleCMD added to MiniGames<br>
-- _**v0.4.0**_ : MiniGames Major Update (Coming soon!)<br>
+- **v0.4.0** : MiniGames Major Update<br>
+- **More Updates coming soon**
 - _**v1.0.0**_  : Final Game<br>
 
 ## WordleCMD - Version History
 
+### WordleCMD v0.4.0
+- Program Optimization
 ### WordleCMD v0.4.0d1
 - WordleCMD is has now officially been added to MiniGames
 - Converted to a java module.

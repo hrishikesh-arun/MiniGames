@@ -8,12 +8,11 @@ import games.nim.NimGame;
 class MiniGames
 {
 	boolean hasQuit=false;
-	public static String miniGamesVersion="v0.0.0d2";
+	public static String miniGamesVersion="v0.1.0";
 	MiniGames()
 	{
 		// Start
-		System.out.println("MiniGames "+miniGamesVersion);
-		System.out.println("\nWelcome to MiniGames!");
+		System.out.println("\nWelcome to MiniGames "+miniGamesVersion+"!");
 		String op;
 		viewInstructions();
 		do

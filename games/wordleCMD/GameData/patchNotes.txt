@@ -1,6 +1,7 @@
 \    /      / |\/| |\
- \/\/ ordle \ |  | |/ v0.4.0d2
+ \/\/ ordle \ |  | |/ v0.4.0
  
 Patch Notes
 
-1: Optimized Code by setting GameData Directory Variable
+1: Optimized Code
+2: MiniGames Major Update

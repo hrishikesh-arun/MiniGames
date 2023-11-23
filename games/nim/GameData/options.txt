@@ -1,5 +1,8 @@
 Options:
-Press 1 or 1i to play (1 means Normal Mode and 1i means 'ASIAN' Mode {I is for impossible})
+
+Press 1 or 1i to play (1 means Normal Mode and 1i means 'ASIAN' Mode)
+Press 2 for 2-Player Game
+
 Press i to view Options and How to Play
 Press e to view Patch notes
 Press 0 to quit
