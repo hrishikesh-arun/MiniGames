@@ -1,5 +1,5 @@
 /*
-myLib.FileMethods v0.0.2
+myLib.FileMethods v1.0
 */
 package myLib;
 import java.io.File;

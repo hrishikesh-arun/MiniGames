@@ -1,0 +1,11 @@
+Options:
+
+Press 1 to play (Default easy mode)
+1e - easy mode
+1m - medium mode
+1h - hard mode
+1x - extreme mode
+
+Press i to view Instructions
+Press e to view Patch notes
+Press 0 to quit

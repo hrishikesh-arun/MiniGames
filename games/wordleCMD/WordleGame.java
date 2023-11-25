@@ -1,13 +1,15 @@
 package games.wordleCMD;
 
+import java.util.Arrays;
 import myLib.InputField;
 import myLib.FileMethods;
+import myLib.ColorPrint;
 import java.util.Random;
 
 public class WordleGame
 {
 	boolean hasQuit=false;
-	public static String wordleVersion="v0.4.0";
+	public static String wordleVersion="v1.0.0";
 	public String dir = ".\\games\\wordleCMD\\GameData\\";
 	String[] dictionary;
 	Random r;
@@ -15,14 +17,13 @@ public class WordleGame
 	{
 		r = new Random();
 		// Start
-		System.out.println("Wordle CMD "+wordleVersion);
-		System.out.println("\nWelcome to Wordle CMD!");
+		System.out.println("\nWelcome to "+ColorPrint.GREEN_UNDERLINED+"Wordle"+ColorPrint.YELLOW_UNDERLINED+"CMD"+ColorPrint.RESET+"!");
 		String op;
-		viewInstructions(true,false);
+		viewInstructions(false);
 		do
 		{
 			
-			op=InputField.enterField_str("\nMiniGames.WordleCMD> ",false);
+			op=InputField.enterField_str("\n"+ColorPrint.CYAN+"MiniGames"+ColorPrint.RESET+"."+ColorPrint.GREEN+"Wordle"+ColorPrint.YELLOW+"CMD"+ColorPrint.RESET+"> ",false);
 			switch(op)
 			{
 				case "0":
@@ -45,11 +46,10 @@ public class WordleGame
 					playGame(3);
 					break;
 				case "i":
-					viewInstructions(true,true);
+					viewInstructions(true);
 					break;
 				case "e":
 					viewPatchNotes();
-					viewCredits();
 					break;
 				default:
 					System.out.println("\nError! Invalid Input! Try Again!");
@@ -58,22 +58,15 @@ public class WordleGame
 			
 		}while(!hasQuit);
 	}
-	void viewInstructions(boolean showInstructions,boolean showHowToPlay)
+	void viewInstructions(boolean showHTP)
 	{
-		String text = "";
-		if(showInstructions)
-			text = FileMethods.readFile(dir+"instructions.txt");
-			System.out.println("\n"+text);
-		if(showHowToPlay)
+		String text = FileMethods.readFile(dir+"instructions.txt");
+		System.out.println("\n"+text);
+		if(showHTP)
 		{
 			text = FileMethods.readFile(dir+"htp.txt");
 			System.out.println("\n"+text);
 		}
-	}
-	void viewCredits()
-	{
-		String credits = FileMethods.readFile(dir+"credits.txt");
-		System.out.println("\nCredits\n\n"+credits);
 	}
 	void viewPatchNotes()
 	{
@@ -86,16 +79,27 @@ public class WordleGame
 		// Load Dict
 		dictionary = loadDictionary(lev);
 		System.out.println("\nGuess the 5 letter Word\n");
-		boolean hasEnded = false,hasWon = false;
+		boolean hasEnded = false,hasWon = false,hasQuitInGame = false;
 		int count=1,correctLetters;
 		String sWord = getRandomWord().toUpperCase();
 		String ip;
-		do
+		while(!hasEnded)
 		{
 			correctLetters=0;
 			char[] result;
 			//Take Input
 			ip=InputField.enterField_str("\n"+count+": ",false).toUpperCase();
+			// Check if player said quit
+			try
+			{
+				if(Integer.parseInt(ip)==0)
+				{
+					hasQuitInGame=true;
+					hasEnded = true;
+					break;
+				}
+			}
+			catch(Exception e){}
 			//Check if word has 5 letters
 			if(ip.length()!=5)
 			{
@@ -106,17 +110,19 @@ public class WordleGame
 			result=checkInput(ip,sWord);
 			correctLetters=countCorrectLetters(result);
 			//Show Output
-			System.out.println("\n"+result+"\n");
+			String output = new String(result);
+			System.out.println("   "+output);
 			//Continue
-			count++;
 			if(correctLetters==5)
 			{
 				hasEnded = true;
 				hasWon = true;
 				break;
 			}
+			count++;
 			hasEnded= count>6;
-		}while(!hasEnded);
+		}
+		
 		if(hasWon)
 		{
 			System.out.println("\nVictory! Congratulations!");
@@ -137,10 +143,16 @@ public class WordleGame
 				case 5:
 					System.out.println("Fair! Found in 5 guesses");
 					break;
-				default:
+				case 6:
 					System.out.println("Phew! Found in 6 guesses");
 					break;
+				default:
+					break;
 			}
+		}
+		else if(hasQuitInGame)
+		{
+			System.out.println("\nGame has been quit by player");
 		}
 		else
 		{
@@ -153,6 +165,7 @@ public class WordleGame
 		//Check if letter is correct
 		String tempWord = sWord;
 		char[] result = new char[5];
+		Arrays.fill(result,'X');
 		for(int checkCount=0; checkCount < ip.length();checkCount++)
 		{
 			char i = ip.charAt(checkCount);
@@ -212,13 +225,13 @@ public class WordleGame
 		switch(level)
 		{
 			case 1:
-				dic = FileMethods.readFile_LineByLine(".\\games\\wordleCMD\\GameData\\dictionaryEasy.txt",50);
+				dic = FileMethods.readFile_LineByLine(dir+"dictionaryEasy.txt",20);
 				break;
 			case 2:
-				dic = FileMethods.readFile_LineByLine(".\\games\\wordleCMD\\GameData\\dictionaryMedium.txt",750);
+				dic = FileMethods.readFile_LineByLine(dir+"dictionaryMedium.txt",400);
 				break;
 			default:
-				dic = FileMethods.readFile_LineByLine(".\\games\\wordleCMD\\GameData\\dictionaryHard.txt",5750);
+				dic = FileMethods.readFile_LineByLine(dir+"dictionaryHard.txt",2000);
 				break;
 		}
 		return dic;

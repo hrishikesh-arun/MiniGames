@@ -1,8 +1,10 @@
                _             _  __
 |\/| | |\ | | /__ /_\  |\/| |_ /_
-|  | | | \| | \/ /   \ |  | |_ __/  v0.1.0
+|  | | | \| | \/ /   \ |  | |_ __/  v1.0.0
 
 Patch Notes
 
-1: MiniGames Major Update with the completion of NimGame
-2: Minor Code Optimizations
+1: Hangman Has been added to MiniGames
+2: Added Colors to all Games
+3: Code Optimizations
+4: Full Release!

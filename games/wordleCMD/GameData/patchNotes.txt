@@ -1,7 +1,9 @@
-\    /      / |\/| |\
- \/\/ ordle \ |  | |/ v0.4.0
- 
+                    _   _
+\    / /\ |) |\ |  |_  /  |\/||\
+ \/\/  \/ |\ |/ |_ |_  \_ |  ||/ v1.0
+
 Patch Notes
 
-1: Optimized Code
-2: MiniGames Major Update
+1: WordleCMD Official Release
+2: Added colours for better UI
+3: Code Optimizations

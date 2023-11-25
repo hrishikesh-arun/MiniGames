@@ -1,4 +1,5 @@
-myLib v0.3.0
+myLib v0.4.0
 |
-|-InputField.java v0.1.0
-|-FileMethods.java v0.0.2
+|-InputField.java v1.0
+|-FileMethods.java v1.0
+|-ColorPrint.java v1.0

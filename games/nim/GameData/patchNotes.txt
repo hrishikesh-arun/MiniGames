@@ -1,8 +1,9 @@
      _ _ 
 |\ |  |  |\/|
-| \| _|_ |  | v0.1.0
+| \| _|_ |  | v1.0.0
  
 Patch Notes
 
-1: Nim Game is complete! (Nim will become v1.0 only when MiniGames is fully released)
-2: Introduction of Asian Mode!
+1: Nim Game is full released
+2: Added Colors to all Games
+3: Code Optimizations

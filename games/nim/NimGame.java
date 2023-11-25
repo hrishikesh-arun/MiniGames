@@ -2,25 +2,26 @@ package games.nim;
 
 import myLib.InputField;
 import myLib.FileMethods;
+import myLib.ColorPrint;
 import java.util.Random;
 
 public class NimGame
 {
 	boolean hasQuit=false;
-	public static String nimVersion="v0.1.0";
+	public static String nimVersion="v1.0.0";
 	public String dir = ".\\games\\nim\\GameData\\";
 	Random r;
 	public NimGame()
 	{
 		r = new Random();
 		// Start
-		System.out.println("\nWelcome to the Nim Game "+nimVersion+"!");
+		System.out.println("\nWelcome to "+ColorPrint.PURPLE_BRIGHT+"Nim"+ColorPrint.RESET+"!");
 		String op;
-		viewInstructions(true,false);
+		viewInstructions(false);
 		do
 		{
 			
-			op=InputField.enterField_str("\nMiniGames.Nim> ",false);
+			op=InputField.enterField_str("\n"+ColorPrint.CYAN+"MiniGames"+ColorPrint.RESET+"."+ColorPrint.PURPLE_BRIGHT+"Nim"+ColorPrint.RESET+"> ",false);
 			switch(op.toLowerCase())
 			{
 				case "0":
@@ -39,7 +40,7 @@ public class NimGame
 					playGame(true,false);
 					break;
 				case "i":
-					viewInstructions(true,true);
+					viewInstructions(true);
 					break;
 				case "e":
 					viewPatchNotes();
@@ -51,13 +52,11 @@ public class NimGame
 			
 		}while(!hasQuit);
 	}
-	void viewInstructions(boolean showInstructions,boolean showHowToPlay)
+	void viewInstructions(boolean showHTP)
 	{
-		String text = "";
-		if(showInstructions)
-			text = FileMethods.readFile(dir+"options.txt");
-			System.out.println("\n"+text);
-		if(showHowToPlay)
+		String text = FileMethods.readFile(dir+"options.txt");
+		System.out.println("\n"+text);
+		if(showHTP)
 		{
 			text = FileMethods.readFile(dir+"htp.txt");
 			System.out.println("\n"+text);
@@ -120,7 +119,7 @@ public class NimGame
 		}
 		else
 		{
-			System.out.println("\nPlayer 2 wins!");
+			System.out.println(is2Player ? "\nPlayer 2 wins!" : "\nComputer Wins!");
 		}
 	}
 	
@@ -136,6 +135,7 @@ public class NimGame
 		{
 			int pred=((((sum/10)+1)*11)-10)-sum; //Calculates next number in the winning arithmetic series and then subtracts total from it.
 			m = pred<1 ? pred+11 : pred;
+			m-= m>10 ? 10:0;
 		}
 		return m;
 	}

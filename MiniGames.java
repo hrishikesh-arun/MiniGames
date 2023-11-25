@@ -1,24 +1,28 @@
+import java.io.IOException;
+
 import myLib.InputField;
 import myLib.FileMethods;
+import myLib.ColorPrint;
 
 // Import Games
 import games.wordleCMD.WordleGame;
 import games.nim.NimGame;
+import games.hangmanMini.HangmanMini;
 
 class MiniGames
 {
 	boolean hasQuit=false;
-	public static String miniGamesVersion="v0.1.0";
+	public static String miniGamesVersion="v1.0.0";
 	MiniGames()
 	{
+		ColorPrint.clearscreen(); 
 		// Start
-		System.out.println("\nWelcome to MiniGames "+miniGamesVersion+"!");
+		System.out.println(ColorPrint.CYAN+"MiniGames "+ColorPrint.RED_BRIGHT+miniGamesVersion+ColorPrint.RESET+"\n\n"+ColorPrint.GREEN_BRIGHT+"-Main Menu-"+ColorPrint.RESET);
 		String op;
 		viewInstructions();
 		do
 		{
-			
-			op=InputField.enterField_str("\nMiniGames> ",false);
+			op=InputField.enterField_str("\n"+ColorPrint.CYAN+"MiniGames"+ColorPrint.RESET+"> ",false);
 			System.out.println();
 			switch(op)
 			{
@@ -30,6 +34,9 @@ class MiniGames
 					break;
 				case "2":
 					NimGame ng = new NimGame();
+					break;
+				case "3":
+					HangmanMini hg = new HangmanMini();
 					break;
 				// Add your games here
 				

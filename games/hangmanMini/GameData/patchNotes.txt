@@ -1,0 +1,9 @@
+     _                 _
+|_| |_| |\ | / _ |\/| |_| |\ |
+| | | | | \| \/  |  | | | | \| MINI v1.0.0
+ 
+Patch Notes
+
+1: Added to MiniGames
+2: Added Colors
+4: Full Release!

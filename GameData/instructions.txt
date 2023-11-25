@@ -2,9 +2,10 @@ Options (Type the number to play):
 
 1: WordleCMD
 2: Nim
+3: Hangman Mini
 
-More Coming soon!
+Common Options(Available in all games)
 
-Press i to view Instructions and Options
+Press i to view Options and How to Play
 Press e to view Patch notes and Credits
 Press 0 to quit

@@ -1,0 +1,6 @@
+How to Play
+
+In Hangman-Mini, you have to quess the word be entering the letters one by one.
+If the letter is there in the word, then it will replace the dash to signify that the letter is there.
+If you guess all the letters in time, then you win!
+Enjoy!
